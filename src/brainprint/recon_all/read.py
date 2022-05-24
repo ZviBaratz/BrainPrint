@@ -83,4 +83,5 @@ def read_results(
         )
         .astype(str)
     )
+    context["Session Time"] = pd.to_datetime(context["Session Time"])
     return context, results
