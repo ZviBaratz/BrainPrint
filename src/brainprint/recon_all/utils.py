@@ -175,9 +175,13 @@ SUBJECT_NUMERICAL_TRAITS: List[str] = [
 ]
 SUBJECT_CATEGORICAL_TRAITS: List[str] = ["Sex", "Dominant Hand"]
 
-SURFACE_REGISTRATION = (
-    Path(os.environ["FREESURFER_HOME"]) / "average/mni152.register.dat"
-)
+SURFACE_REGISTRATION = None
+try:
+    SURFACE_REGISTRATION = (
+        Path(os.environ["FREESURFER_HOME"]) / "average/mni152.register.dat"
+    )
+except KeyError:
+    pass
 
 
 def plot_nii(
@@ -190,12 +194,15 @@ def plot_nii(
     subtitle: Optional[str] = None,
     subtitle_size: int = 46,
     subtitle_padding: int = 5,
+    reg_file: Path = SURFACE_REGISTRATION,
 ):
+    if SURFACE_REGISTRATION is None:
+        raise ValueError("No registration file provided or detected!")
     surf_data_lh = np.nan_to_num(
-        project_volume_data(nii_path, "lh", str(SURFACE_REGISTRATION))
+        project_volume_data(nii_path, hemi="lh", reg_file=str(reg_file))
     )
     surf_data_rh = np.nan_to_num(
-        project_volume_data(nii_path, "rh", str(SURFACE_REGISTRATION))
+        project_volume_data(nii_path, hemi="rh", reg_file=str(reg_file))
     )
     fig = [mlab.figure(size=size) for i in range(4)]
     brain = Brain(

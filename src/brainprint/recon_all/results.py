@@ -25,6 +25,7 @@ from brainprint.recon_all.read import (
     read_results,
 )
 from brainprint.recon_all.utils import (
+    SURFACE_REGISTRATION,
     get_default_cache_dir,
     plot_nii,
     regional_stats_to_nifti,
@@ -1135,6 +1136,7 @@ class ReconAllResults:
         metric: str = "Average Thickness",
         force_create: bool = False,
         cache_dir: Path = Optional[None],
+        reg_file: Path = SURFACE_REGISTRATION,
     ):
         if destination.exists() and not force_create:
             return destination
@@ -1150,7 +1152,13 @@ class ReconAllResults:
         )
         title = f"FreeSurfer-derived {metric}"
         subtitle = f"{configuration.value} vs. {reference.value}"
-        return plot_nii(path, destination, title=title, subtitle=subtitle)
+        return plot_nii(
+            path,
+            destination,
+            title=title,
+            subtitle=subtitle,
+            reg_file=reg_file,
+        )
 
 
 def load_results() -> ReconAllResults:
