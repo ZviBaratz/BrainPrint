@@ -1,0 +1,55 @@
+
+Generation 1 - Current best internal CV score: 0.8486363636363636
+
+Generation 2 - Current best internal CV score: 0.8486363636363636
+
+Generation 3 - Current best internal CV score: 0.8493939393939394
+
+Generation 4 - Current best internal CV score: 0.8493939393939394
+
+Generation 5 - Current best internal CV score: 0.8493939393939394
+
+Generation 6 - Current best internal CV score: 0.8493939393939394
+
+Generation 7 - Current best internal CV score: 0.8540909090909091
+
+Generation 8 - Current best internal CV score: 0.8596969696969697
+
+Generation 9 - Current best internal CV score: 0.8596969696969697
+
+Generation 10 - Current best internal CV score: 0.8596969696969697
+
+Generation 11 - Current best internal CV score: 0.8674242424242425
+
+Generation 12 - Current best internal CV score: 0.8674242424242425
+
+Generation 13 - Current best internal CV score: 0.8690909090909091
+
+Generation 14 - Current best internal CV score: 0.8796212121212121
+
+Generation 15 - Current best internal CV score: 0.8796212121212121
+
+Generation 16 - Current best internal CV score: 0.8796212121212121
+
+Generation 17 - Current best internal CV score: 0.8796212121212121
+
+Generation 18 - Current best internal CV score: 0.8796212121212121
+
+Generation 19 - Current best internal CV score: 0.8796212121212121
+
+Generation 20 - Current best internal CV score: 0.8801515151515151
+
+Generation 21 - Current best internal CV score: 0.8801515151515151
+
+Generation 22 - Current best internal CV score: 0.8801515151515151
+
+Generation 23 - Current best internal CV score: 0.8813636363636362
+
+Generation 24 - Current best internal CV score: 0.8813636363636362
+
+363.29 minutes have elapsed. TPOT will close down.
+TPOT closed during evaluation in one generation.
+WARNING: TPOT may not provide a good pipeline if TPOT is stopped/interrupted in a early generation.
+
+
+TPOT closed prematurely. Will use the current best pipeline.

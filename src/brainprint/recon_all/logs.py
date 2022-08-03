@@ -1,0 +1,56 @@
+from brainprint.recon_all.utils import bcolors
+
+FILTER_START: str = (
+    f"{bcolors.BLUE_BACK}Filtering {{n}} recon-all results{bcolors.ENDC}"
+)
+FILTER_END = f"{bcolors.BOLD}{bcolors.OKGREEN}{{n_match}}{bcolors.ENDC}{bcolors.BOLD_OFF}/{{n_total}} recon-all runs selected."
+STANDARDIZATION_START: str = f"{bcolors.PINK_BACK}Standardizing {bcolors.BOLD}{{n}}{bcolors.BOLD_OFF} recon-all results across all acquisition protocols and execution configurations{bcolors.ENDC}"
+EMPTY_PROTOCOL_SELECTION: str = f"{bcolors.WARNING}No runs for protocol {{protocol}} detected, skipping...{bcolors.ENDC}"
+CONFIGURATION_FILTER_START: str = f"Filtering {bcolors.BOLD}{{n}}{bcolors.ENDC} recon-all results matching {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC}..."
+CONFIGURATION_FILTER_END: str = f"{bcolors.BOLD}{{n_match}}{bcolors.BOLD_OFF}/{{n_total}} recon-all results matching {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC} detected."
+EMPTY_CONFIGURATION_SELECTION: str = f"No {bcolors.HEADER}{{protocol}}{bcolors.ENDC} runs matching {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC} detected, skipping..."
+SELECTION_STANDARDIZATION_START: str = f"Standardizing {bcolors.BOLD}{{n}}{bcolors.ENDC} recon-all results matching the {bcolors.HEADER}{{protocol}}{bcolors.ENDC} protocol and {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC}..."
+SELECTION_STANDARDIZATION_END: str = f"Successfully standardized {bcolors.BOLD}{{n}}{bcolors.ENDC} recon-all results matching the {bcolors.HEADER}{{protocol}}{bcolors.ENDC} protocol and {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC}."
+PROTOCOL_STANDARDIZATION_START: str = f"Standardizing {bcolors.BOLD}{{n}}{bcolors.ENDC} recon-all results matching the {bcolors.HEADER}{{protocol}}{bcolors.ENDC} protocol..."
+PROTOCOL_STANDARDIZATION_END: str = f"Successfully standardized {bcolors.BOLD}{{n}}{bcolors.ENDC} recon-all results matching the {bcolors.HEADER}{{protocol}}{bcolors.ENDC} protocol..."
+CONFIGURATION_STANDARDIZATION_START: str = f"Standardizing {bcolors.BOLD}{{n}}{bcolors.ENDC} recon-all results matching {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC}..."
+CONFIGURATION_STANDARDIZATION_END: str = f"Successfully standardized {bcolors.BOLD}{{n}}{bcolors.ENDC} recon-all results matching {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC}..."
+PROTOCOL_FILTER_START: str = f"Filtering {bcolors.BOLD}{{n}}{bcolors.ENDC} recon-all results matching {bcolors.HEADER}{{protocol}}{bcolors.ENDC}..."
+PROTOCOL_FILTER_END: str = f"{bcolors.BOLD}{{n_match}}{bcolors.BOLD_OFF}/{{n_total}} recon-all results matching {bcolors.HEADER}{{protocol}}{bcolors.ENDC} detected."
+ATLAS_FILTER_START: str = f"Selecting {bcolors.OKBLUE}{{atlas}}{bcolors.ENDC} atlas results from  {{n}} recon-all runs..."
+PARTIAL_ATLAS_RESULTS: str = f"{bcolors.WARNING}PARTIAL ATLAS RESULTS{bcolors.ENDC}! Selecting {bcolors.OKBLUE}{{atlas}}{bcolors.ENDC} atlas results from {bcolors.BOLD}{{n}}{bcolors.ENDC} recon-all runs returned {bcolors.BOLD}{{n_filtered}}{bcolors.ENDC} rows ({bcolors.FAIL}{{n_dropped}}{bcolors.ENDC} runs dropped)."
+READ_RESULTS_START: str = "Reading recon-all execution results from {path}..."
+READ_RESULTS_END: str = f"{bcolors.ITALIC}Successfully read {bcolors.BOLD}{{n}}{bcolors.BOLD_OFF} recon-all execution results from {{path}}.{bcolors.ITALIC_OFF}"
+READ_CONTEXT_START: str = (
+    "Reading scan research context and metadata from {path}..."
+)
+READ_CONTEXT_END: str = f"{bcolors.ITALIC}Successfully read {bcolors.BOLD}{{n}}{bcolors.BOLD_OFF} scan research context and metadata from {{path}}.{bcolors.ITALIC_OFF}"
+READ_CONFIGURATIONS_START: str = (
+    "Reading recon-all execution configurations from {path}..."
+)
+READ_CONFIGURATIONS_END: str = f"{bcolors.ITALIC}Successfully read {bcolors.BOLD}{{n}}{bcolors.BOLD_OFF} recon-all execution configurations from {{path}}.{bcolors.ITALIC_OFF}"
+INDEX_PAIRS_START: str = "Generating index pairs for {n} recon-all runs..."
+INDEX_PAIRS_END: str = f"Successfully generated {bcolors.BOLD}{{n_within}}{bcolors.BOLD_OFF}/{bcolors.BOLD}{{n_between}}{bcolors.BOLD_OFF} within/between-subject recon-all run index pairs from a total of {bcolors.BOLD}{{n_runs}}{bcolors.BOLD_OFF} runs."
+MULTI_RUN_INDICES: str = f"{bcolors.RED_FORE}{bcolors.BOLD}{{n_subjects}}{bcolors.BOLD_OFF} subjects{bcolors.ENDC} were found to have multiple recon-all run results, returning {bcolors.GREEN_FORE}{bcolors.BOLD}{{n_runs}}{bcolors.ENDC} indices of runs belonging to these subjects."
+DIFFERENCES_START: str = f"{bcolors.INVERSE}Differences calculation and serialization{bcolors.INVERSE_OFF}\nCalculating differences in recon-all anatomical statistics from {bcolors.BOLD}{{n_runs}}{bcolors.BOLD_OFF} and across {bcolors.BOLD}{{n_protocols}}{bcolors.BOLD_OFF} acquisition protocols and {bcolors.BOLD}{{n_configurations}}{bcolors.BOLD_OFF} execution configurations{bcolors.ENDC}"
+DIFFERENCES_ITERATION: str = f"Calculating differences in within/between-subject recon-all anatomical statistics for the {bcolors.HEADER}{{protocol}}{bcolors.ENDC} protocol and {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC} execution configuration..."
+NO_WITHIN_SUBJECT_RUNS: str = f"{bcolors.WARNING}No within-subject differences detected for the {{protocol}} protocol and {{execution_configuration}} configuration!{bcolors.ENDC}"
+NO_BETWEEN_SUBJECT_RUNS: str = f"{bcolors.WARNING}No between-subject differences detected for the {{protocol}} protocol and {{execution_configuration}} configuration!{bcolors.ENDC}"
+DIFFERENCES_WITHIN_START: str = f"Calculating within-subject differences in recon-all anatomical statistics for the {bcolors.HEADER}{{protocol}}{bcolors.ENDC} protocol and {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC}..."
+DIFFERENCES_WITHIN_END: str = f"Successfully calculated {bcolors.BOLD}{{n_pairs}}{bcolors.BOLD_OFF} within-subject differences in recon-all anatomical statistics for the {bcolors.HEADER}{{protocol}}{bcolors.ENDC} protocol and {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC}."
+DIFFERENCES_BETWEEN_START: str = f"Calculating within-subject differences in recon-all anatomical statistics for the {bcolors.HEADER}{{protocol}}{bcolors.ENDC} protocol and {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC}..."
+DIFFERENCES_BETWEEN_END: str = f"Successfully calculated {bcolors.BOLD}{{n_pairs}}{bcolors.BOLD_OFF} between-subject differences in recon-all anatomical statistics for the {bcolors.HEADER}{{protocol}}{bcolors.ENDC} protocol and {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC}."
+EXISTING_DIFFERENCES_FOUND: str = f"Existing serialized recon-all differences for the {bcolors.HEADER}{{protocol}}{bcolors.ENDC} and {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC} detected!"
+DISTANCES_START: str = f"{bcolors.INVERSE}Distance calculation and serialization{bcolors.INVERSE_OFF}\nCalculating distance metrics between recon-all anatomical statistics from {bcolors.BOLD}{{n_runs}}{bcolors.BOLD_OFF} and across {bcolors.BOLD}{{n_protocols}}{bcolors.BOLD_OFF} acquisition protocols and {bcolors.BOLD}{{n_configurations}}{bcolors.BOLD_OFF} execution configurations{bcolors.ENDC}"
+EXISTING_DISTANCES_FOUND: str = f"Existing serialized {{within_or_between}}-subject recon-all distance metrics for the {bcolors.HEADER}{{protocol}}{bcolors.ENDC} and {bcolors.OKCYAN}{{execution_configuration}}{bcolors.ENDC} detected!"
+COMPLETED_FILTER_START: str = "Selecting scans with all {n_configurations} recon-all execution configuration results..."
+COMPLETED_FILTER_END: str = f"Successfully selected {bcolors.BOLD}{{n_runs}} runs{bcolors.BOLD_OFF} from {bcolors.BOLD}{{n_scans}} scans{bcolors.BOLD_OFF} with all {bcolors.ITALIC}{{n_configurations}}{bcolors.ITALIC_OFF} recon-all execution configuration results."
+SINGLE_SCAN_SELECTION_START: str = f"Filtering {bcolors.BOLD}{{n_runs}}{bcolors.BOLD_OFF} runs from {bcolors.BOLD}{{n_scans}}{bcolors.BOLD_OFF} to contain only one scan per subject..."
+SINGLE_SCAN_SELECTION_END: str = f"Successfully selected {bcolors.BOLD}{{n_runs}}{bcolors.BOLD_OFF} runs from a total of {bcolors.BOLD}{{n_scans}}{bcolors.BOLD_OFF} scans belonging to {bcolors.BOLD}{{n_subjects}}{bcolors.BOLD_OFF} subjects."
+SCAN_ID_SELECTION_START: str = f"Filtering {bcolors.BOLD}{{n_runs}}{bcolors.BOLD_OFF} by {bcolors.BOLD}{{n_scans}}{bcolors.BOLD_OFF} scan IDs..."
+SCAN_ID_SELECTION_END: str = f"Successfully selected {bcolors.BOLD}{{n_runs_selected}}{bcolors.BOLD_OFF}/{bcolors.BOLD}{{n_runs_total}}{bcolors.BOLD_OFF} runs from a total of {bcolors.BOLD}{{n_scans}}{bcolors.BOLD_OFF} scans belonging to {bcolors.BOLD}{{n_subjects}}{bcolors.BOLD_OFF} subjects."
+MULTI_SUBJECTS_START: str = f"Querying completed scans' subject IDs from {bcolors.BOLD}{{n_runs}}{bcolors.BOLD_OFF} runs..."
+MULTI_SUBJECTS_END: str = f"{bcolors.BOLD}{{n_subjects}} subjects{bcolors.BOLD_OFF} with multiple scans found to be associated with {bcolors.BOLD}{{n_runs}} runs{bcolors.BOLD_OFF} from {bcolors.BOLD}{{n_scans}} scans{bcolors.BOLD_OFF}."
+INVALID_SAMPLE_MODE: str = (
+    "Mode must be either 'first' or 'last', not '{mode}'!"
+)

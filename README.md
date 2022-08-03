@@ -5,7 +5,7 @@ Provides EDA and modeling functionality over FreeSurfer's `recon-all` anatomical
 
 ## TODO
 
-- [ ] Add complete run configuration to server CSV export.
+- [X] Add complete run configuration to server CSV export.
 - [ ] Create class to easily extract samples with various queries:
   - [ ] Context
     - [ ] between and within subject scans

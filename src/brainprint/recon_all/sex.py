@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
-from brainprint.recon_all.read import DEFAULT_ATLAS, read_results
-from brainprint.recon_all.utils import DATASET_SEQUENCE, Dataset
+from brainprint.recon_all.read import DEFAULT_ATLAS, read_context, read_results
+from brainprint.protocol import DATASET_SEQUENCE, Dataset
 from scipy.stats import loguniform, randint, uniform
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -114,7 +114,8 @@ def preprocess_results(
     random_state=RANDOM_STATE,
     target_name: str = "Sex",
 ):
-    context, results = read_results(atlas=atlas)
+    results = read_results(atlas=atlas)
+    context = read_context()
     dataset_context, dataset_results = filter_by_dataset(
         context, results, dataset
     )

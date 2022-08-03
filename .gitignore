@@ -41,3 +41,18 @@ data
 
 # Dask worker directory
 **/dask-worker-space
+
+# TPOT checkpoints directory
+**/tpot_checkpoints
+
+# Exported files directory
+**/exports
+
+# Artifacts
+**/*.png
+**/*.csv
+**/*.xlsx
+**/*.nii
+**/*.nii.gz
+outdated_cache_outdated
+outdated_cache_pingouin
