@@ -674,6 +674,7 @@ class ReconAllResults:
     def split(
         self,
         execution_configuration: ExecutionConfiguration,
+        target: str,
         single_mode: str = False,
         metrics: List[str] = None,
         context: pd.DataFrame = None,
@@ -718,8 +719,8 @@ class ReconAllResults:
             configuration=execution_configuration,
             scan_ids=test_scan_ids,
         )
-        y_train = self.context.loc[X_train.index, "Sex"]
-        y_test = self.context.loc[X_test.index, "Sex"]
+        y_train = self.context.loc[X_train.index, target]
+        y_test = self.context.loc[X_test.index, target]
         return X_train, X_test, y_train, y_test
 
     def get_multi_mask(

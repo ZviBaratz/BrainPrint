@@ -1,0 +1,67 @@
+
+Generation 1 - Current best internal CV score: 0.8271212121212121
+
+Generation 2 - Current best internal CV score: 0.8271212121212121
+
+Generation 3 - Current best internal CV score: 0.8271212121212121
+
+Generation 4 - Current best internal CV score: 0.8271212121212121
+
+Generation 5 - Current best internal CV score: 0.8271212121212121
+
+Generation 6 - Current best internal CV score: 0.827348484848485
+
+Generation 7 - Current best internal CV score: 0.8506818181818183
+
+Generation 8 - Current best internal CV score: 0.8506818181818183
+
+Generation 9 - Current best internal CV score: 0.8506818181818183
+
+Generation 10 - Current best internal CV score: 0.8506818181818183
+
+Generation 11 - Current best internal CV score: 0.8506818181818183
+
+Generation 12 - Current best internal CV score: 0.8506818181818183
+
+Generation 13 - Current best internal CV score: 0.8506818181818183
+
+Generation 14 - Current best internal CV score: 0.8506818181818183
+
+Generation 15 - Current best internal CV score: 0.8506818181818183
+
+Generation 16 - Current best internal CV score: 0.8506818181818183
+
+Generation 17 - Current best internal CV score: 0.8506818181818183
+
+Generation 18 - Current best internal CV score: 0.8506818181818183
+
+Generation 19 - Current best internal CV score: 0.8506818181818183
+
+Generation 20 - Current best internal CV score: 0.8506818181818183
+
+Generation 21 - Current best internal CV score: 0.8506818181818183
+
+Generation 22 - Current best internal CV score: 0.8506818181818183
+
+Generation 23 - Current best internal CV score: 0.8596212121212121
+
+Generation 24 - Current best internal CV score: 0.8596212121212121
+
+Generation 25 - Current best internal CV score: 0.8596212121212121
+
+Generation 26 - Current best internal CV score: 0.8596212121212121
+
+Generation 27 - Current best internal CV score: 0.8596212121212121
+
+Generation 28 - Current best internal CV score: 0.8677272727272728
+
+Generation 29 - Current best internal CV score: 0.8677272727272728
+
+Generation 30 - Current best internal CV score: 0.8677272727272728
+
+372.15 minutes have elapsed. TPOT will close down.
+TPOT closed during evaluation in one generation.
+WARNING: TPOT may not provide a good pipeline if TPOT is stopped/interrupted in a early generation.
+
+
+TPOT closed prematurely. Will use the current best pipeline.

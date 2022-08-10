@@ -1,7 +1,7 @@
 .DS_Store
 
 # Virtual environment directory
-venv/
+*venv*/
 
 # Cache directories and byte-code files
 *.py[cod]

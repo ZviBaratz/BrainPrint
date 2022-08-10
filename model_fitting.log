@@ -1,0 +1,214 @@
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2003[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T'][0m detected.
+Successfully selected [1m10 runs[22m from [1m2 scans[22m with all [3m5[23m recon-all execution configuration results.
+[1m[92m10[0m[22m/5512 recon-all runs selected.
+Starting Default model search.
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2003[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T'][0m detected.
+Successfully selected [1m10 runs[22m from [1m2 scans[22m with all [3m5[23m recon-all execution configuration results.
+[1m[92m10[0m[22m/5512 recon-all runs selected.
+Starting Default model search.
+Successfully selected [1m10[22m runs from a total of [1m2[22m scans belonging to [1m2[22m subjects.
+[44mFiltering 10 recon-all results[0m
+[1m2[22m/10 recon-all results matching [96m['Default'][0m detected.
+Successfully selected [1m1[22m/[1m2[22m runs from a total of [1m1[22m scans belonging to [1m1[22m subjects.
+[1m[92m1[0m[22m/10 recon-all runs selected.
+[44mFiltering 10 recon-all results[0m
+[1m2[22m/10 recon-all results matching [96m['Default'][0m detected.
+Successfully selected [1m1[22m/[1m2[22m runs from a total of [1m1[22m scans belonging to [1m1[22m subjects.
+[1m[92m1[0m[22m/10 recon-all runs selected.
+Starting model search with StandardScaler transformation.
+Creating pipeline for LogisticRegression with StandardScaler scaling.
+Fitting LogisticRegression model...
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2003[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T'][0m detected.
+Successfully selected [1m10 runs[22m from [1m2 scans[22m with all [3m5[23m recon-all execution configuration results.
+[1m[92m10[0m[22m/5512 recon-all runs selected.
+Starting Default model search.
+Successfully selected [1m10[22m runs from a total of [1m2[22m scans belonging to [1m2[22m subjects.
+[44mFiltering 10 recon-all results[0m
+[1m2[22m/10 recon-all results matching [96m['Default'][0m detected.
+Successfully selected [1m1[22m/[1m2[22m runs from a total of [1m1[22m scans belonging to [1m1[22m subjects.
+[1m[92m1[0m[22m/10 recon-all runs selected.
+[44mFiltering 10 recon-all results[0m
+[1m2[22m/10 recon-all results matching [96m['Default'][0m detected.
+Successfully selected [1m1[22m/[1m2[22m runs from a total of [1m1[22m scans belonging to [1m1[22m subjects.
+[1m[92m1[0m[22m/10 recon-all runs selected.
+Starting model search with StandardScaler transformation.
+Creating pipeline for LogisticRegression with StandardScaler scaling.
+Fitting LogisticRegression model...
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2003[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T'][0m detected.
+Successfully selected [1m10 runs[22m from [1m2 scans[22m with all [3m5[23m recon-all execution configuration results.
+[1m[92m10[0m[22m/5512 recon-all runs selected.
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2003[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T'][0m detected.
+Successfully selected [1m10 runs[22m from [1m2 scans[22m with all [3m5[23m recon-all execution configuration results.
+[1m0 subjects[22m with multiple scans found to be associated with [1m0 runs[22m from [1m0 scans[22m.
+[1m[92m0[0m[22m/5512 recon-all runs selected.
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2003[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T'][0m detected.
+[1m[92m2003[0m[22m/5512 recon-all runs selected.
+[93mPARTIAL ATLAS RESULTS[0m! Selecting [94mAtlas.DESTRIEUX[0m atlas results from [1m2003[0m recon-all runs returned [1m1999[0m rows ([91m4[0m runs dropped).
+Successfully selected [1m10 runs[22m from [1m2 scans[22m with all [3m5[23m recon-all execution configuration results.
+Successfully selected [1m10 runs[22m from [1m2 scans[22m with all [3m5[23m recon-all execution configuration results.
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2688[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T', 'FLAIR + MPRAGE', 'T2 + MPRAGE'][0m detected.
+[1m[92m2688[0m[22m/5512 recon-all runs selected.
+[93mPARTIAL ATLAS RESULTS[0m! Selecting [94mAtlas.DESTRIEUX[0m atlas results from [1m2688[0m recon-all runs returned [1m2684[0m rows ([91m4[0m runs dropped).
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2688[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T', 'FLAIR + MPRAGE', 'T2 + MPRAGE'][0m detected.
+Successfully selected [1m14 runs[22m from [1m2 scans[22m with all [3m7[23m recon-all execution configuration results.
+[1m[92m14[0m[22m/5512 recon-all runs selected.
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2688[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T', 'FLAIR + MPRAGE', 'T2 + MPRAGE'][0m detected.
+Successfully selected [1m14 runs[22m from [1m2 scans[22m with all [3m7[23m recon-all execution configuration results.
+[1m0 subjects[22m with multiple scans found to be associated with [1m0 runs[22m from [1m0 scans[22m.
+[1m[92m0[0m[22m/5512 recon-all runs selected.
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2688[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T', 'FLAIR + MPRAGE', 'T2 + MPRAGE'][0m detected.
+[1m223 subjects[22m with multiple scans found to be associated with [1m2056 runs[22m from [1m479 scans[22m.
+[1m[92m2056[0m[22m/5512 recon-all runs selected.
+[93mPARTIAL ATLAS RESULTS[0m! Selecting [94mAtlas.DESTRIEUX[0m atlas results from [1m2056[0m recon-all runs returned [1m2054[0m rows ([91m2[0m runs dropped).
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2688[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T', 'FLAIR + MPRAGE', 'T2 + MPRAGE'][0m detected.
+Successfully selected [1m14 runs[22m from [1m2 scans[22m with all [3m7[23m recon-all execution configuration results.
+[1m0 subjects[22m with multiple scans found to be associated with [1m0 runs[22m from [1m0 scans[22m.
+[1m[92m0[0m[22m/5512 recon-all runs selected.
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m3010[22m/3024 recon-all results matching [96m['T2 + MPRAGE + 3T', 'T2 + MPRAGE', 'T2', 'Default', 'FLAIR', 'FLAIR + MPRAGE', 'FLAIR + MPRAGE + 3T'][0m detected.
+Successfully selected [1m2142 runs[22m from [1m306 scans[22m with all [3m7[23m recon-all execution configuration results.
+[1m121 subjects[22m with multiple scans found to be associated with [1m1771 runs[22m from [1m253 scans[22m.
+[1m[92m1771[0m[22m/5512 recon-all runs selected.
+[93mPARTIAL ATLAS RESULTS[0m! Selecting [94mAtlas.DESTRIEUX[0m atlas results from [1m1771[0m recon-all runs returned [1m1769[0m rows ([91m2[0m runs dropped).
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2688[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T', 'FLAIR + MPRAGE', 'T2 + MPRAGE'][0m detected.
+Successfully selected [1m14 runs[22m from [1m2 scans[22m with all [3m7[23m recon-all execution configuration results.
+[1m[92m14[0m[22m/5512 recon-all runs selected.
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2688[22m/3024 recon-all results matching [96m['Default', 'FLAIR', 'MPRAGE', 'FLAIR + MPRAGE + 3T', 'T2 + MPRAGE + 3T', 'FLAIR + MPRAGE', 'T2 + MPRAGE'][0m detected.
+Successfully selected [1m14 runs[22m from [1m2 scans[22m with all [3m7[23m recon-all execution configuration results.
+[1m0 subjects[22m with multiple scans found to be associated with [1m0 runs[22m from [1m0 scans[22m.
+[1m[92m0[0m[22m/5512 recon-all runs selected.
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2325[22m/3024 recon-all results matching [96m['T2 + MPRAGE + 3T', 'T2', 'Default', 'FLAIR', 'FLAIR + MPRAGE + 3T'][0m detected.
+Successfully selected [1m1535 runs[22m from [1m307 scans[22m with all [3m5[23m recon-all execution configuration results.
+[1m[92m1535[0m[22m/5512 recon-all runs selected.
+[93mPARTIAL ATLAS RESULTS[0m! Selecting [94mAtlas.DESTRIEUX[0m atlas results from [1m1535[0m recon-all runs returned [1m1533[0m rows ([91m2[0m runs dropped).
+Starting T2 + MPRAGE + 3T model search.
+Successfully selected [1m840[22m runs from a total of [1m168[22m scans belonging to [1m168[22m subjects.
+[44mFiltering 1533 recon-all results[0m
+[1m306[22m/1533 recon-all results matching [96m['T2 + MPRAGE + 3T'][0m detected.
+Successfully selected [1m126[22m/[1m306[22m runs from a total of [1m126[22m scans belonging to [1m126[22m subjects.
+[1m[92m126[0m[22m/1533 recon-all runs selected.
+[44mFiltering 1533 recon-all results[0m
+[1m306[22m/1533 recon-all results matching [96m['T2 + MPRAGE + 3T'][0m detected.
+Successfully selected [1m42[22m/[1m306[22m runs from a total of [1m42[22m scans belonging to [1m42[22m subjects.
+[1m[92m42[0m[22m/1533 recon-all runs selected.
+Starting model search with StandardScaler transformation.
+Creating pipeline for LogisticRegression with StandardScaler scaling.
+Fitting LogisticRegression model...
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2325[22m/3024 recon-all results matching [96m['T2 + MPRAGE + 3T', 'T2', 'Default', 'FLAIR', 'FLAIR + MPRAGE + 3T'][0m detected.
+Successfully selected [1m1535 runs[22m from [1m307 scans[22m with all [3m5[23m recon-all execution configuration results.
+[1m[92m1535[0m[22m/5512 recon-all runs selected.
+[93mPARTIAL ATLAS RESULTS[0m! Selecting [94mAtlas.DESTRIEUX[0m atlas results from [1m1535[0m recon-all runs returned [1m1533[0m rows ([91m2[0m runs dropped).
+Starting T2 + MPRAGE + 3T model search.
+Successfully selected [1m840[22m runs from a total of [1m168[22m scans belonging to [1m168[22m subjects.
+[44mFiltering 1533 recon-all results[0m
+[1m306[22m/1533 recon-all results matching [96m['T2 + MPRAGE + 3T'][0m detected.
+Successfully selected [1m126[22m/[1m306[22m runs from a total of [1m126[22m scans belonging to [1m126[22m subjects.
+[1m[92m126[0m[22m/1533 recon-all runs selected.
+[44mFiltering 1533 recon-all results[0m
+[1m306[22m/1533 recon-all results matching [96m['T2 + MPRAGE + 3T'][0m detected.
+Successfully selected [1m42[22m/[1m306[22m runs from a total of [1m42[22m scans belonging to [1m42[22m subjects.
+[1m[92m42[0m[22m/1533 recon-all runs selected.
+Starting model search with StandardScaler transformation.
+Creating pipeline for LogisticRegression with StandardScaler scaling.
+Fitting LogisticRegression model...
+[3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[44mFiltering 5512 recon-all results[0m
+[1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[1m2325[22m/3024 recon-all results matching [96m['T2 + MPRAGE + 3T', 'T2', 'Default', 'FLAIR', 'FLAIR + MPRAGE + 3T'][0m detected.
+Successfully selected [1m1535 runs[22m from [1m307 scans[22m with all [3m5[23m recon-all execution configuration results.
+[1m[92m1535[0m[22m/5512 recon-all runs selected.
+[93mPARTIAL ATLAS RESULTS[0m! Selecting [94mAtlas.DESTRIEUX[0m atlas results from [1m1535[0m recon-all runs returned [1m1533[0m rows ([91m2[0m runs dropped).
+Starting T2 + MPRAGE + 3T model search.
+Successfully selected [1m840[22m runs from a total of [1m168[22m scans belonging to [1m168[22m subjects.
+[44mFiltering 1533 recon-all results[0m
+[1m306[22m/1533 recon-all results matching [96m['T2 + MPRAGE + 3T'][0m detected.
+Successfully selected [1m126[22m/[1m306[22m runs from a total of [1m126[22m scans belonging to [1m126[22m subjects.
+[1m[92m126[0m[22m/1533 recon-all runs selected.
+[44mFiltering 1533 recon-all results[0m
+[1m306[22m/1533 recon-all results matching [96m['T2 + MPRAGE + 3T'][0m detected.
+Successfully selected [1m42[22m/[1m306[22m runs from a total of [1m42[22m scans belonging to [1m42[22m subjects.
+[1m[92m42[0m[22m/1533 recon-all runs selected.
+Starting model search with StandardScaler transformation.
+Creating pipeline for LogisticRegression with StandardScaler scaling.
+Fitting LogisticRegression model...

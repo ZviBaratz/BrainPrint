@@ -2,6 +2,7 @@
 Definition of the :func:`read_results` utility function.
 """
 import logging
+from datetime import tzinfo
 from pathlib import Path
 from typing import List
 
@@ -89,6 +90,7 @@ def read_results(
 def read_context(path: Path = DEFAULT_CONTEXT_PATH) -> pd.DataFrame:
     # Log start.
     start_message = logs.READ_CONTEXT_START.format(path=path)
+    logger.debug(start_message)
 
     context = pd.read_csv(path, index_col=0)
     context["Corrected"] = context["Scan File Name"].str.contains(
@@ -103,7 +105,18 @@ def read_context(path: Path = DEFAULT_CONTEXT_PATH) -> pd.DataFrame:
         )
         .astype(str)
     )
-    context["Session Time"] = pd.to_datetime(context["Session Time"])
+    context["Session Time"] = pd.to_datetime(
+        context["Session Time"], utc=False
+    )
+    context["Date of Birth"] = pd.to_datetime(
+        context["Date of Birth"], utc=False
+    )
+    context["Age (days)"] = (
+        context["Session Time"].dt.date - context["Date of Birth"].dt.date
+    ).dt.days
+    context["Sex"] = (
+        context["Sex"].replace({"M": "Male", "F": "Female"}).astype("category")
+    )
 
     # Log end.
     end_message = logs.READ_CONTEXT_END.format(n=len(context), path=path)

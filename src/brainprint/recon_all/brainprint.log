@@ -2965,3 +2965,13 @@ Calculating distance metrics between recon-all anatomical statistics from [1m59
 [2022-08-03 11:41:16,383] [1m253[22m/1769 recon-all results matching [96m['Default'][0m detected.
 [2022-08-03 11:41:16,394] [1m252[22m/1769 recon-all results matching [96m['FLAIR + MPRAGE + 3T'][0m detected.
 [2022-08-03 11:41:16,397] [1m253[22m/1769 recon-all results matching [96m['Default'][0m detected.
+[2022-08-07 13:12:20,990] [3mSuccessfully read [1m5512[22m recon-all execution results from /home/zvi/Projects/brainprint/data/results.csv.[23m
+[2022-08-07 13:12:21,005] [3mSuccessfully read [1m5512[22m recon-all execution configurations from /home/zvi/Projects/brainprint/data/configurations.csv.[23m
+[2022-08-07 13:12:21,045] [3mSuccessfully read [1m5512[22m scan research context and metadata from /home/zvi/Projects/brainprint/data/context.csv.[23m
+[2022-08-07 13:12:21,480] [44mFiltering 5512 recon-all results[0m
+[2022-08-07 13:12:21,482] [1m3024[22m/5512 recon-all results matching [95m['The Base (corrected)'][0m detected.
+[2022-08-07 13:12:21,486] [1m3010[22m/3024 recon-all results matching [96m['T2 + MPRAGE + 3T', 'T2 + MPRAGE', 'T2', 'Default', 'FLAIR', 'FLAIR + MPRAGE', 'FLAIR + MPRAGE + 3T'][0m detected.
+[2022-08-07 13:12:21,493] Successfully selected [1m2142 runs[22m from [1m306 scans[22m with all [3m7[23m recon-all execution configuration results.
+[2022-08-07 13:12:21,503] [1m121 subjects[22m with multiple scans found to be associated with [1m1771 runs[22m from [1m253 scans[22m.
+[2022-08-07 13:12:21,507] [1m[92m1771[0m[22m/5512 recon-all runs selected.
+[2022-08-07 13:12:21,531] [93mPARTIAL ATLAS RESULTS[0m! Selecting [94mAtlas.DESTRIEUX[0m atlas results from [1m1771[0m recon-all runs returned [1m1769[0m rows ([91m2[0m runs dropped).
