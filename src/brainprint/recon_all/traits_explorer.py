@@ -61,7 +61,7 @@ class TraitsExploration:
     def __init__(
         self,
         standardization: BaseEstimator = RobustScaler,
-        dummy_encode: bool = True,
+        dummy_encode: bool = True,        
     ) -> None:
         # Read recon-all results.
         self.results = ReconAllResults(

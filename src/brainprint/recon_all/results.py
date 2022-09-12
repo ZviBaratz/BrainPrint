@@ -1162,7 +1162,7 @@ class ReconAllResults:
         )
 
 
-def load_results() -> ReconAllResults:
+def load_results(**kwargs) -> ReconAllResults:
     return ReconAllResults(
         atlas=Atlas.DESTRIEUX,
         protocol=Protocol.BASE,
@@ -1175,4 +1175,5 @@ def load_results() -> ReconAllResults:
             ExecutionConfiguration.MPRAGE_AND_3T_AND_T2,
             ExecutionConfiguration.MPRAGE_AND_3T_AND_FLAIR,
         ),
+        **kwargs,
     )

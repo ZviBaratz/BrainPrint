@@ -18,6 +18,7 @@ from brainprint.recon_all.metric import AXIS_KWARGS, Metric
 from brainprint.recon_all.results import ReconAllResults, load_results
 from brainprint.recon_all.utils import get_default_cache_dir
 from sklearn.preprocessing import StandardScaler
+from scipy.spatial.distance import cityblock
 
 logger = logging.getLogger(__name__)
 
@@ -34,7 +35,13 @@ class ReconAllDifferences:
         self,
         results: ReconAllResults = None,
     ) -> None:
-        self.results = load_results() if results is None else results
+        self.results = (
+            load_results(
+                completed_only=True, multi_only=True, questionnaire_only=False
+            )
+            if results is None
+            else results
+        )
 
     def get_multi_run_indices(
         self,
@@ -392,13 +399,14 @@ class ReconAllDifferences:
                     force=force,
                 )
 
-    def calculate_cosine_similarity(
+    def calculate_cosine_distance(
         self, values, run_id_1: int, run_id_2: int
     ) -> float:
         run_1 = values.loc[run_id_1]
         run_2 = values.loc[run_id_2]
-        return np.dot(run_1, run_2) / (
-            np.linalg.norm(run_1) * np.linalg.norm(run_2)
+        return 1 - (
+            np.dot(run_1, run_2)
+            / (np.linalg.norm(run_1) * np.linalg.norm(run_2))
         )
 
     def get_distances_name(
@@ -505,18 +513,25 @@ class ReconAllDifferences:
             if differences is None:
                 continue
             distances = pd.DataFrame(
-                columns=[Metric.EUCLIDEAN.value, Metric.COSINE.value]
+                columns=[
+                    Metric.EUCLIDEAN.value,
+                    Metric.COSINE.value,
+                    Metric.MANHATTAN.value,
+                ]
             )
             distances[Metric.COSINE.value] = differences.index.to_frame(
                 index=False
             ).swifter.apply(
-                lambda row: self.calculate_cosine_similarity(
+                lambda row: self.calculate_cosine_distance(
                     values, row["Run 1"], row["Run 2"]
                 ),
                 axis=1,
             )
             distances[Metric.EUCLIDEAN.value] = np.sqrt(
                 (differences.values**2).sum(axis=1)
+            )
+            distances[Metric.MANHATTAN.value] = np.abs(differences.values).sum(
+                axis=1
             )
             distances.index = differences.index
             path = self.get_distance_path(
@@ -574,7 +589,8 @@ class ReconAllDifferences:
             sharey=True,
         )
         fig.suptitle(
-            f"{metric.value} Distribution by Subject Identity\n", y=0.99
+            f"{metric.value} Distance Distribution by Subject Identity\n",
+            y=0.99,
         )
         for protocol in protocols:
             for i_row, configuration in enumerate(configurations):
@@ -593,6 +609,11 @@ class ReconAllDifferences:
                         color="orange",
                         binwidth=binwidth,
                     )
+                    ax[i_row].axvline(
+                        within[metric.value].max(),
+                        color="orange",
+                        linestyle="--",
+                    )
                 if within_or_between in ["between", "both"]:
                     sns.histplot(
                         between[metric.value],
@@ -603,11 +624,34 @@ class ReconAllDifferences:
                         color="blue",
                         binwidth=binwidth,
                     )
+                    ax[i_row].axvline(
+                        between[metric.value].min(),
+                        color="blue",
+                        linestyle="--",
+                    )
                 ax[i_row].set(
                     title=f"{configuration.value}",
                     xlabel=None,
                     **AXIS_KWARGS.get(metric, {}),
                 )
+                if i_row == len(configurations) - 1:
+                    edges = (
+                        min(
+                            [
+                                between[metric.value].min(),
+                                within[metric.value].min(),
+                            ]
+                        ),
+                        max(
+                            [
+                                between[metric.value].max(),
+                                within[metric.value].max(),
+                            ]
+                        ),
+                    )
+                    edge_range = edges[1] - edges[0]
+                    gap = edge_range * 0.05
+                    ax[i_row].set_xlim(np.array(edges) + np.array([-gap, gap]))
         ax[0].legend()
         ax[-1].set(
             xlabel=metric.value,

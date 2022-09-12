@@ -2,7 +2,7 @@ from brainprint.atlas import Atlas
 from brainprint.protocol import Protocol
 from brainprint.recon_all.execution_configuration import ExecutionConfiguration
 from brainprint.recon_all.results import ReconAllResults
-from brainprint.recon_all.sex.model_fitting import EstimatorSearch
+from brainprint.recon_all.models.model_fitting import EstimatorSearch
 from sklearn.model_selection import RepeatedStratifiedKFold
 
 
