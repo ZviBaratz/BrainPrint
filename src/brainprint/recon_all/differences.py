@@ -17,8 +17,8 @@ from brainprint.recon_all.execution_configuration import ExecutionConfiguration
 from brainprint.recon_all.metric import AXIS_KWARGS, Metric
 from brainprint.recon_all.results import ReconAllResults, load_results
 from brainprint.recon_all.utils import get_default_cache_dir
-from sklearn.preprocessing import StandardScaler
 from scipy.spatial.distance import cityblock
+from sklearn.preprocessing import StandardScaler
 
 logger = logging.getLogger(__name__)
 
@@ -572,7 +572,7 @@ class ReconAllDifferences:
 
     def plot_distances(
         self,
-        metric: Metric = Metric.COSINE,
+        metrics: Metric = None,
         within_or_between: str = "both",
         protocols: List[Protocol] = None,
         configurations: List[ExecutionConfiguration] = None,
@@ -580,81 +580,125 @@ class ReconAllDifferences:
         binwidth: float = None,
     ) -> Tuple[plt.Figure, plt.Axes]:
         protocols = protocols or self.results.protocol
+        metrics = metrics or [
+            Metric.EUCLIDEAN,
+            Metric.MANHATTAN,
+            Metric.COSINE,
+        ]
         configurations = configurations or self.results.configuration
         source = get_default_cache_dir() if source is None else source
         fig, ax = plt.subplots(
             figsize=(20, 15),
             nrows=len(configurations),
-            sharex=True,
-            sharey=True,
+            ncols=len(metrics),
+            sharex="col",
+            sharey="col",
         )
         fig.suptitle(
-            f"{metric.value} Distance Distribution by Subject Identity\n",
-            y=0.99,
+            "Distance Distribution Density by Subject Identity\n",
+            y=0.9,
+            fontsize=24,
         )
         for protocol in protocols:
             for i_row, configuration in enumerate(configurations):
-                within, between = self.calculate_filtered_distances(
-                    protocol=protocol,
-                    configuration=configuration,
-                    destination=source,
-                )
-                if within_or_between in ["within", "both"]:
-                    sns.histplot(
-                        x=within[metric.value],
-                        label="Within subject",
-                        ax=ax[i_row],
-                        kde=True,
-                        stat="density",
-                        color="orange",
-                        binwidth=binwidth,
+                for i_col, metric in enumerate(metrics):
+                    current_axis = (
+                        ax[i_row, i_col] if len(metrics) > 1 else ax[i_row]
                     )
-                    ax[i_row].axvline(
-                        within[metric.value].max(),
-                        color="orange",
-                        linestyle="--",
+                    within, between = self.calculate_filtered_distances(
+                        protocol=protocol,
+                        configuration=configuration,
+                        destination=source,
                     )
-                if within_or_between in ["between", "both"]:
-                    sns.histplot(
-                        between[metric.value],
-                        label="Between subject",
-                        ax=ax[i_row],
-                        kde=True,
-                        stat="density",
-                        color="blue",
-                        binwidth=binwidth,
+                    if within_or_between in ["within", "both"]:
+                        sns.histplot(
+                            x=within[metric.value],
+                            label="Within subject",
+                            ax=current_axis,
+                            kde=True,
+                            stat="density",
+                            color="orange",
+                            binwidth=binwidth,
+                        )
+                        current_axis.axvline(
+                            within[metric.value].max(),
+                            color="orange",
+                            linestyle="--",
+                            label="Max. within subject",
+                        )
+                        min_between = between[metric.value].min()
+                        misses = len(
+                            within[within[metric.value] > min_between]
+                        )
+                        sensitivity = 1 - (misses / len(within))
+                        current_axis.text(
+                            0.6,
+                            0.6,
+                            f"Sensitivity: {sensitivity:.3f}",
+                            transform=current_axis.transAxes,
+                            fontsize=14,
+                        )
+                    if within_or_between in ["between", "both"]:
+                        min_value = between[metric.value].min()
+                        sns.histplot(
+                            between[metric.value],
+                            label="Between subject",
+                            ax=current_axis,
+                            kde=True,
+                            stat="density",
+                            color="gray",
+                            binwidth=binwidth,
+                        )
+                        current_axis.axvline(
+                            min_value,
+                            color="gray",
+                            linestyle="--",
+                            label="Min. between subject",
+                        )
+                    current_axis.set(
+                        xlabel=None,
+                        ylabel=None,
+                        **AXIS_KWARGS.get(metric, {}),
                     )
-                    ax[i_row].axvline(
-                        between[metric.value].min(),
-                        color="blue",
-                        linestyle="--",
-                    )
-                ax[i_row].set(
-                    title=f"{configuration.value}",
-                    xlabel=None,
-                    **AXIS_KWARGS.get(metric, {}),
-                )
-                if i_row == len(configurations) - 1:
-                    edges = (
-                        min(
-                            [
-                                between[metric.value].min(),
-                                within[metric.value].min(),
-                            ]
-                        ),
-                        max(
-                            [
-                                between[metric.value].max(),
-                                within[metric.value].max(),
-                            ]
-                        ),
-                    )
-                    edge_range = edges[1] - edges[0]
-                    gap = edge_range * 0.05
-                    ax[i_row].set_xlim(np.array(edges) + np.array([-gap, gap]))
-        ax[0].legend()
-        ax[-1].set(
-            xlabel=metric.value,
+                    if i_row == len(configurations) - 1:
+                        edges = (
+                            min(
+                                [
+                                    between[metric.value].min(),
+                                    within[metric.value].min(),
+                                ]
+                            ),
+                            max(
+                                [
+                                    between[metric.value].max(),
+                                    within[metric.value].max(),
+                                ]
+                            ),
+                        )
+                        edge_range = edges[1] - edges[0]
+                        gap = edge_range * 0.05
+                        current_axis.set_xlim(
+                            np.array(edges) + np.array([-gap, gap])
+                        )
+                        current_axis.set_xlabel(metric.value, fontsize=20)
+                    if i_col == 0:
+                        current_axis.set_ylabel(
+                            configuration.value,
+                            rotation=75,
+                            labelpad=12,
+                            fontsize=14,
+                        )
+        fig.text(
+            0,
+            0.5,
+            "Execution Configuration",
+            va="center",
+            rotation="vertical",
+            fontsize=20,
         )
-        plt.tight_layout(h_pad=3)
+        if len(metrics) > 1:
+            ax[0, -1].legend(bbox_to_anchor=(0.8, 2.2), prop={"size": 16})
+        else:
+            ax[0].legend(bbox_to_anchor=(0.8, 2.2), prop={"size": 16})
+        fig.tight_layout(pad=2)
         return fig, ax

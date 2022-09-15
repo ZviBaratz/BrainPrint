@@ -6,7 +6,7 @@ import joblib
 import pandas as pd
 from brainprint.recon_all.execution_configuration import ExecutionConfiguration
 from brainprint.recon_all.results import ReconAllResults
-from brainprint.recon_all.sex.model_configurations import (
+from brainprint.recon_all.models.model_configurations import (
     MODEL_CONFIGURATIONS,
     EstimatorType,
 )
