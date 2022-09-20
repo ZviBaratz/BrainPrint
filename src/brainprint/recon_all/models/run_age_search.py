@@ -1,8 +1,8 @@
 from brainprint.atlas import Atlas
 from brainprint.protocol import Protocol
 from brainprint.recon_all.execution_configuration import ExecutionConfiguration
+from brainprint.recon_all.models.model_fitting import EstimatorSearch
 from brainprint.recon_all.results import ReconAllResults
-from brainprint.recon_all.sex.model_fitting import EstimatorSearch
 from sklearn.model_selection import KFold
 
 
@@ -22,7 +22,7 @@ def main():
         ],
     )
     results.context["Age"] = results.context["Age (days)"].astype(int)
-    cv = KFold(n_splits=5, random_state=0)
+    cv = KFold(n_splits=5, random_state=0, shuffle=True)
     estimator_search = EstimatorSearch(
         results, target="Age", cv=cv, random_state=0, scoring="r2"
     )

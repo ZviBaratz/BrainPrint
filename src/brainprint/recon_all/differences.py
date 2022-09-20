@@ -596,7 +596,7 @@ class ReconAllDifferences:
         )
         fig.suptitle(
             "Distance Distribution Density by Subject Identity\n",
-            y=0.9,
+            y=0.85,
             fontsize=24,
         )
         for protocol in protocols:
@@ -697,7 +697,7 @@ class ReconAllDifferences:
             fontsize=20,
         )
         if len(metrics) > 1:
-            ax[0, -1].legend(bbox_to_anchor=(0.8, 2.2), prop={"size": 16})
+            ax[0, -1].legend(bbox_to_anchor=(0.85, 2.4), prop={"size": 16})
         else:
             ax[0].legend(bbox_to_anchor=(0.8, 2.2), prop={"size": 16})
         fig.tight_layout(pad=2)
