@@ -173,53 +173,64 @@ class EstimatorSearch:
 
     def read_pipeline_scores_df(self) -> pd.DataFrame:
         csv_path = self.get_scores_csv_path()
-        return pd.read_csv(
-            csv_path,
-            names=["Configuration", "Estimator", "Scaler", "Train", "Test"],
-            header=0,
+        try:
+            return pd.read_csv(
+                csv_path,
+                names=[
+                    "Configuration",
+                    "Estimator",
+                    "Scaler",
+                    "Train",
+                    "Test",
+                ],
+                header=0,
+            )
+        except FileNotFoundError:
+            scores = self.calculate_pipeline_scores_df()
+            scores.to_csv(csv_path)
+            return scores
+
+    def calculate_pipeline_scores(
+        self,
+        estimator: BaseEstimator,
+        configuration: ExecutionConfiguration,
+        scaler: BaseEstimator,
+    ) -> Dict[str, Any]:
+        pipeline = self.load_pipeline(estimator, configuration, scaler)
+        if pipeline is None:
+            print(
+                f"No pipeline found for {estimator.__name__} with configuration {configuration.value} and {scaler.__name__}!"
+            )
+            return None, None
+        _, X_test, _, y_test = self.results.split(
+            execution_configuration=configuration,
+            target=self.target,
+            single_mode="last",
+            random_state=self.random_state,
         )
+        test_score = pipeline.score(X_test, y_test)
+        return pipeline.best_score_, test_score
 
-    # def get_pipeline_scores(
-    #     self,
-    #     estimator: BaseEstimator,
-    #     configuration: ExecutionConfiguration,
-    #     scaler: BaseEstimator,
-    # ) -> Dict[str, Any]:
-    #     pipeline = self.load_pipeline(estimator, configuration, scaler)
-    #     if pipeline is None:
-    #         print(
-    #             f"No pipeline found for {estimator.__name__} with configuration {configuration.value} and {scaler.__name__}!"
-    #         )
-    #         return None, None
-    #     _, X_test, _, y_test = self.results.split(
-    #         execution_configuration=configuration,
-    #         target=self.target,
-    #         single_mode="last",
-    #         random_state=self.random_state,
-    #     )
-    #     test_score = pipeline.score(X_test, y_test)
-    #     return pipeline.best_score_, test_score
-
-    # def get_pipeline_scores_df(self):
-    #     scores = {"train": {}, "test": {}}
-    #     for estimator in self.model_configurations[self.estimator_type]:
-    #         for configuration in self.configurations:
-    #             for scaler in self.scaling:
-    #                 train_score, test_score = self.get_pipeline_scores(
-    #                     estimator=estimator,
-    #                     configuration=configuration,
-    #                     scaler=scaler,
-    #                 )
-    #                 index = (
-    #                     configuration.value,
-    #                     estimator.__name__,
-    #                     scaler.__name__,
-    #                 )
-    #                 scores["train"][index] = train_score
-    #                 scores["test"][index] = test_score
-    #     df = pd.DataFrame(scores)
-    #     df.index.names = ["configuration", "estimator", "scaler"]
-    #     return df.sort_index()
+    def calculate_pipeline_scores_df(self):
+        scores = {"train": {}, "test": {}}
+        for estimator in self.model_configurations[self.estimator_type]:
+            for configuration in self.configurations:
+                for scaler in self.scaling:
+                    train_score, test_score = self.calculate_pipeline_scores(
+                        estimator=estimator,
+                        configuration=configuration,
+                        scaler=scaler,
+                    )
+                    index = (
+                        configuration.value,
+                        estimator.__name__,
+                        scaler.__name__,
+                    )
+                    scores["train"][index] = train_score
+                    scores["test"][index] = test_score
+        df = pd.DataFrame(scores)
+        df.index.names = ["configuration", "estimator", "scaler"]
+        return df.sort_index()
 
     def read_estimator_results(self, estimator, configuration, scaler):
         path = self.get_pipeline_path(estimator, configuration, scaler)
