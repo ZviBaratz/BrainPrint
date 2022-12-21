@@ -58,3 +58,5 @@ brainprint.log
 outdated_cache_outdated
 outdated_cache_pingouin
 src/brainprint/recon_all/sex/tpot/
+src/brainprint/dl/data
+*.log
